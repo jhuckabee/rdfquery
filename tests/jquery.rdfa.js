@@ -505,11 +505,11 @@ test("Test 0014", function() {
 
 test("Test 0015", function() {
 	$('head').append('<link rel="dc:source" href="urn:isbn:0140449132" /><meta property="dc:creator" content="Fyodor Dostoevsky" />');
-	testTriples($('link[rel=dc:source]').rdfa(), 
+	testTriples($('link[rel="dc:source"]').rdfa(), 
 		[$.rdf.triple('<> dc:source <urn:isbn:0140449132> .', ns)]);
 	testTriples($('meta').rdfa(), 
 		[$.rdf.triple('<> dc:creator "Fyodor Dostoevsky"  .', ns)]);
-	$('link[rel=dc:source]').remove();
+	$('link[rel="dc:source"]').remove();
 	$('meta').remove();
 })
 
